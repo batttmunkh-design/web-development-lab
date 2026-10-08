@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаборатори 04: Flexbox ба Grid layout</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER + NAVIGATION (Flexbox) -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="logo" href="#">ШУТИС Портал</a>
+            <nav class="main-nav" aria-label="Үндсэн цэс">
+                <ul class="nav-list">
+                    <li><a class="nav-link is-active" href="#">Нүүр</a></li>
+                    <li><a class="nav-link" href="#courses">Хичээлүүд</a></li>
+                    <li><a class="nav-link" href="#news">Мэдээ</a></li>
+                    <li><a class="nav-link" href="#contact">Холбоо барих</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ҮНДСЭН БҮТЭЦ (Grid: main + sidebar) -->
+    <div class="layout">
+
+        <main class="content">
+            <section class="intro">
+                <h1 class="page-title">Миний хичээлүүд</h1>
+                <p>Энэ улирлын судалж буй хичээлүүд болон тэдгээрийн товч мэдээлэл.</p>
+            </section>
+
+            <!-- КАРТЫН ГРИД (3 багана) -->
+            <section class="card-grid" id="courses" aria-label="Хичээлүүд">
+                <article class="card">
+                    <h2 class="card-title">Веб зохиомж</h2>
+                    <p class="card-text">HTML, CSS ашиглан вэб хуудас зохион бүтээх.</p>
+                    <span class="tag">Лаб 4</span>
+                </article>
+                <article class="card">
+                    <h2 class="card-title">Мэдээллийн сан</h2>
+                    <p class="card-text">SQL, хүснэгтийн бүтэц, хамаарал.</p>
+                    <span class="tag">3 кредит</span>
+                </article>
+                <article class="card">
+                    <h2 class="card-title">Алгоритм</h2>
+                    <p class="card-text">Эрэмбэлэх, хайх алгоритмууд ба нарийн төвөгтэй байдал.</p>
+                    <span class="tag">3 кредит</span>
+                </article>
+                <article class="card">
+                    <h2 class="card-title">Java</h2>
+                    <p class="card-text">Объект хандлагат програмчлалын үндэс.</p>
+                    <span class="tag">Програмчлал</span>
+                </article>
+                <article class="card">
+                    <h2 class="card-title">Python</h2>
+                    <p class="card-text">Скрипт бичих, файлтай ажиллах, шифрлэлт.</p>
+                    <span class="tag">Програмчлал</span>
+                </article>
+                <article class="card">
+                    <h2 class="card-title">Сүлжээ</h2>
+                    <p class="card-text">Компьютерын сүлжээ, протоколуудын үндэс.</p>
+                    <span class="tag">Сүлжээ</span>
+                </article>
+            </section>
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <section class="widget" id="news">
+                <h2 class="widget-title">Мэдээ</h2>
+                <ul class="widget-list">
+                    <li>Лаб 4-ийн хугацаа сунгагдлаа</li>
+                    <li>Шинэ сургалтын хуваарь гарлаа</li>
+                    <li>Улирлын шалгалтын бэлтгэл</li>
+                </ul>
+            </section>
+            <section class="widget">
+                <h2 class="widget-title">Хурдан холбоос</h2>
+                <ul class="widget-list">
+                    <li><a href="#">Дүнгийн хуудас</a></li>
+                    <li><a href="#">Хичээлийн хуваарь</a></li>
+                    <li><a href="#">Номын сан</a></li>
+                </ul>
+            </section>
+        </aside>
+    </div>
+
+    <!-- FOOTER (Flexbox) -->
+    <footer class="site-footer" id="contact">
+        <div class="footer-inner">
+            <p>&copy; 2026 Веб зохиомж хичээл</p>
+            <ul class="footer-links">
+                <li><a href="#">Нууцлал</a></li>
+                <li><a href="#">Тусламж</a></li>
+                <li><a href="#">info@example.mn</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
