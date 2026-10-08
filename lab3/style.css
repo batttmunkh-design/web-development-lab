@@ -1,0 +1,315 @@
+/* =========================================================
+   Лаборатори 03: HTML формыг CSS-ээр загварчлах
+   ========================================================= */
+
+/* ---------- 5. Өнгө, фонт: нэг газраас удирдана ---------- */
+:root {
+  --ink: #01564f;        /* гарчиг, header */
+  --text: #26323f;       /* үндсэн текст */
+  --accent: #0f766e;     /* үндсэн товч, focus */
+  --accent-dark: #0b5953;
+  --highlight: #51f50b;  /* badge */
+  --page: #eaf0f5;       /* хуудасны дэвсгэр */
+  --card: #ffffff;
+  --line: #c9d4df;       /* хүрээ */
+  --font: 'Manrope', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--page);
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  background: var(--ink);
+  color: #fff;
+  padding: 20px 32px;
+}
+
+.site-title {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.nav-list {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-link {
+  display: block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: #dbe6f1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* ---------- Хуудасны бүтэц ---------- */
+.page {
+  max-width: 640px;
+  margin: 32px auto;          /* голлуулах */
+  padding: 0 16px;
+}
+
+/* ---------- 3. Box model: карт ---------- */
+.card {
+  background: var(--card);
+  padding: 32px;              /* дотор зай */
+  margin-bottom: 28px;        /* гаднах зай */
+  border: 1px solid var(--line);
+  border-radius: 14px;        /* бөөрөнхий булан */
+  box-shadow: 0 6px 18px rgba(22, 50, 79, 0.08);
+}
+
+/* ---------- 2. Class сонгогчоор тус тусад нь загварчлах ---------- */
+
+/* Гарчиг */
+.form-title {
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.section-title {
+  margin: 0 0 16px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.form-intro {
+  margin: 0 0 24px;
+}
+
+/* Бүлэг (fieldset) */
+.group {
+  margin: 0 0 24px;
+  padding: 20px 20px 4px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.group-title {
+  padding: 0 10px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Талбар */
+.field {
+  margin-bottom: 18px;        /* талбар хоорондын зай */
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.field-input {
+  width: 100%;
+  padding: 10px 12px;         /* "амьсгалуулах" дотор зай */
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--text);
+  background: #fff;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.2);
+}
+
+.field-file {
+  padding: 8px;
+}
+
+textarea.field-input {
+  resize: vertical;
+}
+
+/* Radio / checkbox */
+.choice-row {
+  display: flex;
+  gap: 24px;
+}
+
+.choice-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.choice {
+  cursor: pointer;
+}
+
+.choice input {
+  margin-right: 6px;
+  accent-color: var(--accent);
+}
+
+/* Товчнууд */
+.btn-row {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--text);
+  border-color: var(--line);
+}
+
+.btn-secondary:hover {
+  background: var(--page);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--highlight);
+  outline-offset: 2px;
+}
+
+/* ---------- 4. position: relative / absolute ---------- */
+
+/* Эцэг элемент: relative болгосноор badge энэ картын дотор байрлана */
+.form-card {
+  position: relative;
+}
+
+/* Badge: картын баруун дээд буланд */
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--highlight);
+  color: #3b2a00;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Tooltip: "?" дээр хулганаа аваачихад гарна */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: center;
+  cursor: help;
+}
+
+.tooltip-text {
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.tooltip:hover .tooltip-text,
+.tooltip:focus .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ---------- Жагсаалт, хүснэгт ---------- */
+.interest-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.grades {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.grades th,
+.grades td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.grades th {
+  background: var(--page);
+  color: var(--ink);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding: 24px 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ---------- Жижиг дэлгэц ---------- */
+@media (max-width: 520px) {
+  .card {
+    padding: 20px;
+  }
+  .btn-row {
+    flex-direction: column;
+  }
+}
